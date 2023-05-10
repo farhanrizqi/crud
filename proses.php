@@ -18,7 +18,19 @@ if (isset($_POST['aksi'])){
             echo $query;
         }
     }else if($_POST['aksi'] == "edit"){
+        $kd_produk = $_POST['kd_produk'];
+        $nama = $_POST['nama'];
+        $ket = $_POST['ket'];
+        $harga = $_POST['harga'];
+        $jumlah = $_POST['jumlah'];
 
+        $query = "UPDATE produk SET nama_produk='$nama', keterangan='$ket', harga='$harga', jumlah='$jumlah' WHERE kd_produk='$kd_produk';";
+        $sql = mysqli_query($conn, $query);
+        if($sql){
+            header("location: index.php");
+        }else{
+            echo $query;
+        }
     }
 }
 

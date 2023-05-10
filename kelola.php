@@ -40,6 +40,7 @@ include 'koneksi.php';
     <div class="container-fluid">
       <h1 class="mt-4">CRUD</h1>
       <form method="POST" action="proses.php">
+        <input type="hidden" value="<?php echo $kd_produk; ?>" name="kd_produk">
       <div class="mb-3 row">
         <label
           for="nama"
